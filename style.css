@@ -1,5 +1,5 @@
 body {
-    text-align: center;
+    text-align: left; /* Cambiamos el alineado del texto a la izquierda */
     font-family: Arial, sans-serif;
     background-image: url(./images/galaxia.jpg);
     background-repeat: no-repeat;
@@ -7,34 +7,38 @@ body {
     background-attachment: fixed;
     min-height: 100vh;
     margin: 0;
+    padding: 20px; /* Agregamos un colchón para que nada pegue al borde */
+    box-sizing: border-box;
 
-    /* CONFIGURACIÓN PARA CENTRAR TODO */
     display: flex;
-    flex-direction: column; /* Elementos uno debajo de otro */
-    align-items: center;    /* Centra horizontalmente */
-    justify-content: center; /* Centra verticalmente (opcional) */
-    gap: 20px;              /* Crea espacio uniforme entre cada elemento */
+    flex-direction: column; 
+    /* CAMBIO CLAVE: Alinea todo al inicio (izquierda) */
+    align-items: flex-start; 
+    justify-content: flex-start; 
+    gap: 30px; 
 }
 
 h1 {
     color: #ffffff;
     background-color: rgb(31, 23, 31);
-    border-radius: 20px;
-    padding: 15px 30px; /* Más espacio a los lados para que se vea como burbuja */
+    border-radius: 15px;
+    padding: 15px 25px;
     position: sticky;
     top: 10px;
     z-index: 10;
+    margin: 0;
 }
 
 h2, h3 {
     color: #f9cdff;
     margin: 0;
-    max-width: 80%; /* Para que el texto no se pegue a los bordes en celulares */
+    max-width: 90%;
+    text-align: left; /* Asegura que el texto largo empiece a la izquierda */
 }
 
 h2 {
     font-size: 30px;
-    /* Eliminamos el align-self: flex-start para que use el centro del padre */
+    /* Ya no necesita align-self porque hereda el flex-start del body */
 }
 
 .boton {
@@ -47,14 +51,10 @@ h2 {
     overflow: hidden;
     box-shadow: 0 0 40px #f293ff;
     animation: glow-border 1.5s infinite alternate;
+    /* Mantenemos el tamaño fijo para que no pierda la forma circular */
 }
 
 @keyframes glow-border {
     from { box-shadow: 0 0 20px #f293ff; }
     to { box-shadow: 0 0 60px #f293ff; }
-}
-
-@keyframes glow-border {
-    from { box-shadow: 0 0 20px #f293ff; }
-    to { box-shadow: 0 0 50px #f293ff; }
 }
