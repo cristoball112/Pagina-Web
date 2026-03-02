@@ -6,7 +6,6 @@ body {
     background-position: center;
     background-attachment: fixed;
     height: 2000px;
-    align-items: flex-start;
 }
 
 h1 {
@@ -23,9 +22,10 @@ h3 {
 }
 
 h2 {
-    color:#f9cdff;
+    color: #f9cdff;
     padding: 10px;
     font-size: 30px;
+    align-self: flex-start;
 }
 
 .boton {
