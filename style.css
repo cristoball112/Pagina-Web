@@ -26,6 +26,7 @@ h2 {
     color:#f9cdff;
     padding: 10px;
     font-size: 30px;
+    h2-attachment: flex;
 }
 
 .boton {
