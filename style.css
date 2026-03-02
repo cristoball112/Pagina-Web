@@ -11,7 +11,7 @@ body {
     display: flex;
     flex-direction: column;
     /* CAMBIO CLAVE: Todos los hijos intentan estirarse al ancho total */
-    align-items: stretch; 
+    align-items: center; 
 }
 
 h1 {
