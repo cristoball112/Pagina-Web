@@ -8,57 +8,50 @@ body {
     min-height: 100vh;
     margin: 0;
 
+    /* CONFIGURACIÓN PARA CENTRAR TODO */
     display: flex;
-    flex-direction: column;
-    /* CAMBIO CLAVE: Todos los hijos intentan estirarse al ancho total */
-    align-items: flex-end; 
+    flex-direction: column; /* Elementos uno debajo de otro */
+    align-items: center;    /* Centra horizontalmente */
+    justify-content: center; /* Centra verticalmente (opcional) */
+    gap: 20px;              /* Crea espacio uniforme entre cada elemento */
 }
 
 h1 {
     color: #ffffff;
     background-color: rgb(31, 23, 31);
-    /* Al ser stretch, el border-radius se verá en las esquinas de la pantalla */
-    border-radius: 0 0 20px 20px; 
-    padding: 20px;
+    border-radius: 20px;
+    padding: 15px 30px; /* Más espacio a los lados para que se vea como burbuja */
     position: sticky;
-    top: 0;
+    top: 10px;
     z-index: 10;
-    margin: 0; /* Para que pegue a los bordes */
+}
+
+h2, h3 {
+    color: #f9cdff;
+    margin: 0;
+    max-width: 80%; /* Para que el texto no se pegue a los bordes en celulares */
 }
 
 h2 {
-    color: #f9cdff;
-    padding: 20px;
     font-size: 30px;
-    background-color: rgba(249, 205, 255, 0.1); /* Un fondo suave para notar el estiramiento */
-    margin: 10px 0;
-    /* Quitamos el align-self: flex-start para que herede el stretch del body */
-}
-
-h3 {
-    color: #f9cdff;
-    padding: 50px;
-    background-color: rgba(31, 23, 31, 0.5); /* Fondo semitransparente */
+    /* Eliminamos el align-self: flex-start para que use el centro del padre */
 }
 
 .boton {
     display: flex;
     justify-content: center;
     align-items: center;
-    
-    /* Para que un elemento con ancho fijo se "estire" en Flexbox, 
-       usamos márgenes automáticos a los lados */
-    margin: 40px auto; 
-    
-    width: 400px; /* Mantenemos el tamaño para que siga siendo un círculo */
+    width: 400px;
     height: 400px;
     border-radius: 50%;
     overflow: hidden;
     box-shadow: 0 0 40px #f293ff;
     animation: glow-border 1.5s infinite alternate;
-    
-    /* Si realmente quieres que el botón se estire como barra (ya no sería círculo):
-       quitaría el width y el border-radius 50% */
+}
+
+@keyframes glow-border {
+    from { box-shadow: 0 0 20px #f293ff; }
+    to { box-shadow: 0 0 60px #f293ff; }
 }
 
 @keyframes glow-border {
